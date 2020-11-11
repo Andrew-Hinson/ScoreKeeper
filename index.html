@@ -5,19 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScoreKeeper!</title> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <style>
+        
         .winner {
-            color: green;
+            color: rgba(22, 161, 127, 0.658);
         }
         .loser {
-            color: red;
+            color: rgba(173, 13, 13, 0.705);
+        }
+        .is-horizontal-center {
+        justify-content: center;
         }
     </style>
 </head>
 <body>
+  <section class="section">
     <div class="container">
         <div class="columns">
             <div class="column is-half is-offset-one-quarter">
                 <div class="card">
+                  <div class="card-image has-text-centered">
+                    <figure class="image is-128x128 is-inline-block">
+                      <img src="https://cdn2.iconfinder.com/data/icons/sport-8/70/ping_pong-512.png" class="is-rounded" alt="ping pong paddles and ball">
+                    </figure>
+                  </div>
                     <header class="card-header">
                       <p class="card-header-title">
                         Ping Pong Score Keeper
@@ -29,13 +39,25 @@
                         <h1 class="is-size-1 has-text-centered"><span id='p1Display'>0</span> to <span id="p2Display">0</span></h1>
                         <p class="subtitle has-text-centered">Use the buttons below to keep score</p>
                         <br>
-                        
-                      </div>
+                        <label for="playto" class="label is-large is-inline">Playing To:</label>
+                        <div class="select is-rounded">
+                          <select id="playto">
+                            <option></option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                          </select>
+                        </div>
                     </div>
                     <footer class="card-footer">
-                      <button id="p1Button" class="is-primary button card-footer-item">+1 Player One</button>
-                      <button id="p2Button" class="is-info button card-footer-item">+1 Player Two</button>
-                      <button id="resetButton" class="is-danger button card-footer-item">Reset</button>
+                      <button id="p1Button" class="is-primary button card-footer-item is-large">+1 Player One</button>
+                      <button id="p2Button" class="is-info button card-footer-item is-large">+1 Player Two</button>
+                      <button id="resetButton" class="is-danger button card-footer-item is-large">Reset</button>
                     </footer>
                   </div>
             </div>
@@ -44,18 +66,10 @@
     </div>
     
     
-    <select name="" id="playto">
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-    </select>
+    
     
     <div id="winner"></div>
+  </section>
 </body>
 <script src="app.js"></script>
 </html>
